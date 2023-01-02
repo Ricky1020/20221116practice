@@ -82,3 +82,163 @@ e.pop() # 只刪除最後一個，然後輸出被刪掉的內容
 # 字串中其實也可以看到序列的影子
 f="123456789"
 f[1:3]
+
+
+# 字典 Dictionary
+
+# 一個key對應一個value
+# key是識別用的
+# value是資料
+a={
+   "key1" : "value1",
+   "key2" : "value2",
+   "key3" : "value3",
+   "key4" : {
+       "key5" : "value5",
+       "key6" : "value6"
+       }
+   }
+
+# 實際呈現的樣子(實例)
+b={
+   "商品" : "水壺",
+   "容量(mL)" : 700,
+   "顏色" : "經典黑",
+   "價格" : {
+       "原價(元)":230,
+       "會員價(元)":200,
+       "優惠價(元)":210
+       }
+   }
+
+# 取資料
+b["商品"]
+b["容量(mL)"]
+b["價格"]
+b["價格"]["原價(元)"]
+
+# 新增元素
+b["產品編號"] = "B0130700BLA0230C05"
+
+# 列出所有元素
+b.items()
+
+# 刪除元素
+del b["產品編號"]
+
+# 刪除元素，並回傳value
+b.pop("顏色")
+
+# 布林值
+True
+False
+
+
+a=10
+b=6
+
+a>b # 大於 10>6，故輸出True
+a<b # 小於 10>6，故輸出False
+a==b # 等於 10>6，故輸出False
+a!=b # 不等於 10>6，故輸出True
+
+# 邏輯運算
+# not()會與括號裡面的布林值相反
+not(a>b) # a>b會輸出True，但在外面加上not，會輸出False
+not(a<b) # a<b會輸出False，但在外面加上not，會輸出True
+a>b or a<b # or-->或者，兩者中有一者成立即可成立(True)
+a>b and a<b # and-->而且，兩者皆要成立才能成立(True)，若其中一個成立但另一個不成立，則為False
+
+
+# 數字、字串的基本運算
+
+# 數字運算
+a=3+6
+b=3-6
+c=3*6
+d=3/6 # 小數除法：會算到小數點後(/)
+e=3//6 # 整數除法：不會算到小數點後(//)
+print(a,b,c,d,e)
+
+d=10/6
+e=10//6
+print(d,e)
+
+a=2**3 # 次方(**)
+print(a)
+
+b=2**0.5 # 開根號(**0.5)
+print(b)
+    
+c=28%3 # 取餘數(mod等於)(%)
+print(c)
+
+d=1+1
+print(d)
+
+d=d+1 # 將變數中的數字+1
+print(d)
+
+e=1
+e+=2 # e=e+2
+print(e)
+e-=2 # e=e-2
+print(e)
+e*=2 # e=e*2
+print(e)
+e/=2 # e=e/2
+print(e)
+e//=2 # e=e//2
+print(e)
+e%=2 # e=e%2
+print(e)
+e**=2 # e=e**2
+print(e)
+
+# 字串運算
+
+s="Hello"
+print(s)
+
+s='Hello' # 單引號和雙引號都可以用
+print(s)
+
+s="Tom said:\"Hello!\"" # 若要在引號中再寫一個引號，就要在引號前加上\，稱為跳脫，e.g. \"
+print(s)
+
+
+# 字串相加
+# 在兩字串中間加上 +
+s="Hello"+"world"
+print(s)
+
+# 也可以用一個空白連接兩字串
+s="Hello" "World"
+print(s)
+
+# 換行
+# \n
+s="Hello\nworld"
+print(s)
+
+# 三個引號加換行
+s="""Hello 
+world"""
+print(s)
+
+# 重複出現 ""*n
+s="Hello"*3
+print(s)
+
+# 字串的四則運算
+s="Hello"+"World"*3
+print(s)
+
+# 字串中對字元的操作
+# 字串會對內部的字元編號(索引)，從0開始算起
+s="Hello"
+# 0=H,1=e,2=l,3=l,4=o
+print(s[0]) # print出s字串中索引為0的東西 ==> H    # 字串名[編號]
+print(s[1:4]) # print出s字串中索引為1(含)~4(不含)的東西 ==> ell  # 字串名[開始(含):結束(不含)]
+print(s[1:]) # print出s字串中開頭索引為1(含)之後所有的東西 ==> ello  # 字串名[開始(含):]
+print(s[:4]) # print出s字串中結尾索引為4(不含)之前所有的東西 ==> ello  # 字串名[:結束(不含)]
